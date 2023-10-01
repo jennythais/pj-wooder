@@ -1,0 +1,81 @@
+html {
+    font-size: 62.5%; //! 1 rem = 10px
+}
+body {
+    width: 100%;
+    max-width: var(--max-width-page);
+    margin: auto;
+    scroll-behavior: smooth;
+    font-family: pnr;
+    line-height: normal;
+    &.-disable-scroll {
+        height: 100%;
+        overflow: hidden;
+    }
+    .container-fluid {
+        width: 100%;
+        max-width: var(--container-max-width-fluid);
+        padding-right: var(--gap);
+        padding-left: var(--gap);
+        margin-right: auto;
+        margin-left: auto;
+        position: relative;
+
+        @include maxW(1199.98px) {
+            padding-right: 28px;
+            padding-left: 28px;
+        }
+        @include maxW(991.98px) {
+            padding-right: 28px;
+            padding-left: 28px;
+        }
+
+        @include maxW(767.98px) {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+    }
+    .container {
+        height: 100%;
+        width: 100%;
+        max-width: var(--container-max-width);
+        padding-right: var(--gap);
+        padding-left: var(--gap);
+        margin-right: auto;
+        margin-left: auto;
+        position: relative;
+        @include maxW(1199.98px) {
+            padding-right: 28px;
+            padding-left: 28px;
+        }
+
+        @include maxW(991.98px) {
+            max-width: 960px;
+            padding-right: 28px;
+            padding-left: 28px;
+        }
+
+        @include maxW(767.98px) {
+            max-width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+    }
+    .main {
+        position: relative;
+    }
+}
+.sections {
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+    @include maxW(991.98px) {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    @include maxW(767.98px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}

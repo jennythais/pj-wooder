@@ -1,0 +1,54 @@
+.footer {
+    height: 100px;
+    background: var(--color-black);
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .des {
+        opacity: 0.5;
+    }
+    &__logo {
+        @include midobj;
+    }
+    @include md {
+        .container {
+            flex-direction: column-reverse;
+        }
+        .des {
+            margin-top: 0;
+            margin-bottom: 21px;
+        }
+        &__logo {
+            top: 45%;
+            width: 135px;
+            height: 18.324px;
+        }
+    }
+    .btn {
+        @include transition(0.4s);
+        @include size(35px, 35px, false);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        padding: 6px 10px;
+        border: 1px solid var(--color-white);
+        background: var(--color-gray);
+        cursor: pointer;
+        &:hover {
+            background: var(--color-tan);
+        }
+        position: fixed;
+        top: 93%;
+        right: 2%;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 15;
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}

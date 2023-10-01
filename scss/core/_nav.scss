@@ -1,0 +1,60 @@
+.mobile__nav {
+  @include transition(0.4s);
+  display: none;
+  position: fixed;
+  z-index: 100;
+  background: black;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  &-menu {
+    @include midobj;
+    padding-top: 120px;
+    padding-bottom: 181px;
+    li {
+      cursor: pointer;
+      &.--yellow {
+        a {
+          color: var(--color-tan);
+        }
+      }
+      a {
+        color: var(--color-white);
+        text-align: center;
+        font-family: pnb;
+        font-size: var(--fs-nav);
+        letter-spacing: var(--lsp-nav);
+        text-transform: var(--text-trans);
+        display: block;
+        &:not(:nth-child(5)) {
+          padding-bottom: 30px;
+        }
+      }
+      &:hover {
+        a{
+          color: var(--color-tan);
+        }
+      }
+    }
+  }
+  &.--active-nav {
+    @include transition(0.4s);
+    @include md {
+      @include transition(0.3s);
+      display: block;
+      z-index: 20; //z-index cua header la 21
+      .header {
+        a {
+          img {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .close {
+    @include transition(0.4s);
+    display: none;
+  }
+}

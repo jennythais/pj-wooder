@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'pnb';
+    src: url('../font/ProximaNova-Bold.woff2') format('woff2'),
+        url('../font/ProximaNova-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'pnr';
+    src: url('../font/ProximaNova-Regular.woff2') format('woff2'),
+        url('../font/ProximaNova-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'pnextra';
+    src: url('../font/ProximaNovaA-Extrabld.woff2') format('woff2'),
+        url('../font/ProximaNovaA-Extrabld.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: fallback;
+}

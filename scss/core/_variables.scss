@@ -1,0 +1,90 @@
+:root{
+    --gap: 28px;
+    --max-width-page: 2560px
+    --container-max-width-fluid: 1920px;
+    --container-max-width: calc(1196px + var(--gap) * 2);
+    /* Color */
+    --color-tan: #BEA67C;
+    --color-white: #FFfffF;
+    --color-black: #000000;
+    --color-gray: #464646;
+    /* Typography */
+    --fs-h1: 8.4rem;
+    --lh-h1: normal;
+    --lsp-h1: 1.008rem;
+
+    --fs-h2: 4.6rem;
+    --lh-h2: 5.6rem;
+    --lsp-h2: 0.46rem;
+
+    --fs-h3: 1.8rem;
+    --lh-h3: 2.4rem;
+    --lsp-h3: 0.072rem;
+
+    --fs-btn: 1.5rem;
+    --lh-btn: normal;
+    --lsp-btn: 0.15rem;
+
+    --fs-body: 1.8rem;
+    --lh-body: 2.5rem;
+    --lsp: 0.036rem;
+
+    --fs-small: 1.4rem;
+    --lh-small: normal;
+    --lsp-small: 0.056rem;
+
+    --text-trans: uppercase;
+    /* FOR MOBILE */
+    --fs-nav: 2.2rem;
+    --lsp-nav: 0.176rem;
+    /* Height */
+    --height-header: 9rem;
+    --height-button: 4.4rem;
+    --height-button-arrow: 3.446rem;
+    /* Padding section */
+    --pd-section: 120px;
+    /* Time duration */
+    transition: 0.4;
+    /* Responsive */
+    @include lg{
+        --container-max-width: 1140px;
+    }
+    @include md{
+        --container-max-width: 1140px;
+    }
+    @include sm{
+        --container-max-width: 960px;
+    }
+    @include xs{
+        --container-max-width: 720px;
+        --gap: 10px;
+        --pd-section: 60px;
+        
+        --fs-h1: 5.6rem;
+        --lsp-h1: 0.448rem;
+
+        --fs-h2: 3.8rem;
+        --lh-h2: 4.2rem;
+        --lsp-h2: 0.046rem;
+
+        --fs-h3: 1.6rem;
+        --lh-h3: 2.2rem;
+        --lsp-h3: 0.064rem;
+
+        --fs-btn: 1.2rem;
+        --lsp-btn: 0.12rem;
+    
+        --fs-body: 1.5rem;
+        --lh-body: 2.0rem;
+        --lsp-body: 0.06rem;
+
+        --fs-small: 1.2rem;
+        --lsp-small: 0.048rem;
+    }
+    @include xxs{
+        --container-max-width: 100%;
+    }
+    @include xxxs{
+        --container-max-width: 100%;
+    }
+}

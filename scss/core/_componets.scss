@@ -1,0 +1,349 @@
+img {
+    max-width: 100%;
+    height: auto;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    display: block;
+    outline: 0;
+    object-fit: contain;
+    &.--center {
+        margin: 0 auto;
+        display: block;
+    }
+}
+.--hiden {
+    display: none;
+}
+// Line & format heading
+.heading {
+    font-family: pnb;
+    &.--h1 {
+        font-size: var(--fs-h1);
+        line-height: var(--lh-h1);
+        letter-spacing: var(--lsp-h1);
+        color: var(--color-tan);
+        text-transform: var(--text-trans);
+    }
+    &.--h2 {
+        font-size: var(--fs-h2);
+        line-height: var(--lh-h2);
+        letter-spacing: var(--lsp-h2);
+        color: var(--color-black);
+        text-transform: var(--text-trans);
+
+        position: relative;
+        &.--lineleft {
+            &::after {
+                position: absolute;
+                content: "";
+                width: 58px;
+                height: 5px;
+                background: var(--color-tan);
+                top: 50%;
+                transform: translate(calc(-100% - 14px), -50%);
+                display: block;
+            }
+        }
+        &.--lineright {
+            &::after {
+                position: absolute;
+                content: "";
+                width: 58px;
+                height: 5px;
+                background: var(--color-tan);
+                top: 50%;
+                transform: translate(calc(100% + 14px), -50%);
+                right: 0;
+                display: block;
+            }
+        }
+        &.--textslider {
+            font-size: var(--fs-h1);
+            line-height: var(--lh-h1);
+            letter-spacing: var(--lsp-h1);
+            color: var(--color-tan);
+            text-transform: var(--text-trans);
+        }
+    }
+    &.--h3 {
+        a {
+            font-size: var(--fs-h3);
+            line-height: var(--lh-h3);
+            letter-spacing: var(--lsp-h3);
+            color: var(--color-black);
+            text-transform: var(--text-trans);
+            @include transition(0.4s);
+        }
+    }
+    &.--yellow-cl {
+        font-size: var(--fs-h2);
+        line-height: var(--lh-h2);
+        letter-spacing: var(--lsp-h2);
+        color: var(--color-tan);
+        text-transform: var(--text-trans);
+    }
+    &.--white-cl {
+        font-size: var(--fs-h2);
+        line-height: var(--lh-h2);
+        letter-spacing: var(--lsp-h2);
+        color: var(--color-white);
+        text-transform: var(--text-trans);
+    }
+}
+//text body
+.des {
+    font-family: pnr;
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    letter-spacing: var(--lsp);
+    color: var(--color-gray);
+    // margin top, bottom cho heading va btn
+    margin-top: 10px;
+    &.--small {
+        font-size: var(--fs-small);
+        line-height: var(--lh-small);
+        letter-spacing: var(--lsp-small);
+        color: var(--color-white);
+    }
+    &.--banner {
+        font-size: var(--fs-body);
+        line-height: var(--lh-body);
+        letter-spacing: var(--lsp);
+        color: var(--color-white);
+    }
+    &.--white-cl {
+        font-size: var(--fs-body);
+        line-height: var(--lh-body);
+        letter-spacing: var(--lsp);
+        color: var(--color-white);
+    }
+    @include sm {
+        margin-top: 8px;
+    }
+}
+.thumnail {
+    width: 100%;
+    .img {
+        display: flex;
+        transition: cubic-bezier(0.24, 0.6, 0.95, 0.57);
+        a {
+            @include imgFrame(380px, 283px);
+            img {
+                @include img;
+            }
+        }
+    }
+    .content {
+        margin-top: 27px;
+        position: relative;
+        .heading.--h3 {
+            min-height: 48px;
+            max-width: 380px;
+            @include overtext(2);
+            &::after {
+                position: absolute;
+                content: "";
+                width: 35px;
+                height: 3px;
+                background: var(--color-tan);
+                top: -12px;
+                display: block;
+            }
+            &:hover {
+                a {
+                    color: var(--color-tan);
+                }
+            }
+        }
+        .des {
+            @include overtext(4);
+            margin-top: 0;
+        }
+        @include sm {
+            .heading.--h3 {
+                min-height: 0;
+                max-width: 100%;
+                @include overtext(initial);
+                margin-bottom: 8px;
+            }
+            .des {
+                @include overtext(initial);
+            }
+        }
+    }
+}
+.tabs {
+    @include text("pnb", var(--fs-btn), var(--lh-btn), var(--color-tan), var(--text-trans));
+    letter-spacing: var(--lsp-btn);
+    @include midobj(true);
+    padding: 0 16px;
+    height: 38px;
+    border: 1px solid var(--color-tan);
+    @include transition(0.4s);
+    cursor: pointer;
+    &:hover {
+        color: var(--color-white);
+        background: var(--color-tan);
+    }
+    @include xs {
+        padding: 10px 12px;
+    }
+}
+.btnlearnmore {
+    @include text("pnb", var(--fs-btn), var(--lh-btn), var(--color-black), var(--text-trans));
+    letter-spacing: var(--lsp-btn);
+    display: inline-flex;
+    position: relative;
+    @include transition(0.4s);
+    img {
+        @include transition(1s);
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        width: 30px;
+        height: 2px;
+        background: var(--color-tan);
+        top: 22px;
+        display: block;
+    }
+    &.--reverse {
+        &::after {
+            position: absolute;
+            content: "";
+            width: 30px;
+            height: 2px;
+            background: var(--color-tan);
+            top: 22px;
+            left: 0;
+            display: block;
+        }
+    }
+    &:hover {
+        color: var(--color-tan);
+        img {
+            transform: translateX(5px);
+        }
+    }
+}
+.btn {
+    &.--slider {
+        border: 1px solid var(--color-white);
+        display: flex;
+        width: fit-content;
+        height: 44px;
+        padding: 16px 34px;
+        align-items: center;
+        gap: 10px;
+        color: var(--color-white);
+        font-family: pnb;
+        font-size: var(--fs-btn);
+        line-height: var(--lh-btn);
+        letter-spacing: var(--lsp-btn);
+        text-transform: var(--text-trans);
+        white-space: nowrap;
+        margin: 0 auto;
+        @include transition(0.4s);
+        &:hover {
+            background: var(--color-tan);
+        }
+        @include xs {
+            padding: 13px 20px;
+            gap: 8px;
+        }
+    }
+    &.--watch {
+        @include text("pnb", var(--fs-btn), var(--lh-btn), var(--color-white), var(--text-trans));
+        border: 1px solid;
+        display: inline-flex;
+        width: fit-content;
+        height: 44px;
+        padding: 16px 34px;
+        align-items: center;
+        gap: 10px;
+        letter-spacing: var(--lsp-btn);
+        background-color: transparent;
+        @include transition(0.4s);
+        cursor: pointer;
+        &:hover {
+            background: var(--color-tan);
+        }
+    }
+    &.--control {
+        border: 1px solid var(--color-white);
+        width: 60px;
+        height: 34.46px;
+        @include midobj(true);
+        cursor: pointer;
+        @include transition(0.4s);
+        &:hover {
+            background: var(--color-tan);
+        }
+        @include xs {
+            width: 44px;
+            height: 24px;
+            img {
+                width: 22px;
+                height: 7.63px;
+            }
+        }
+    }
+}
+.--pd {
+    padding: var(--pd-section) 0;
+}
+.--pd-top {
+    padding-top: var(--pd-section);
+}
+.--pd-bottom {
+    padding-bottom: var(--pd-section);
+}
+.--video {
+    color: var(--gray, #464646);
+    text-align: center;
+    font-family: pnr;
+    font-size: var(--fs-h3);
+    line-height: var(--lh-body);
+    letter-spacing: var(--lsp);
+    margin-top: 26px;
+}
+@keyframes arrowdown {
+    0%,
+    100% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translate(0, 6px);
+        opacity: 1;
+    }
+}
+.--active-text {
+    background: var(--color-tan);
+    color: var(--color-white);
+}
+.--active-nobg {
+    color: var(--color-tan);
+}
+.--show {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-black);
+    color: var(--color-white);
+    padding-top: 105px;
+    padding-bottom: 166px;
+    text-align: center;
+    font-family: pnb;
+    font-size: 22px;
+    line-height: normal;
+    letter-spacing: 1.76px;
+    text-transform: uppercase;
+}

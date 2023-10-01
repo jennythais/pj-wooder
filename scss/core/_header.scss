@@ -1,0 +1,174 @@
+.header {
+    background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0) 100%);
+    height: var(--height-header);
+    position: fixed;
+    z-index: 21;
+    top: 0;
+    left: 0;
+    right: 0;
+    &.--bg-black {
+        background: var(--color-black);
+    }
+    .container-fluid {
+        max-width: var(--max-width-container-fluid);
+        height: 100%;
+        @include midobj(true);
+        justify-content: space-between;
+    }
+    &__menu {
+        @include midobj(true);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        li {
+            padding: 0 20px;
+            a {
+                @include transition(0.4);
+                display: block;
+                position: relative;
+                @include text("pnb", var(--fs-btn), var(--lh-btn), var(--color-white), var(--text-trans));
+                @include transition(0.4s);
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    margin-top: 3px;
+                    height: 2px;
+                    background-color: var(--color-tan);
+                    @include transition(0.4);
+                }
+                &:hover {
+                    color: var(--color-tan);
+                    &::after {
+                        width: 100%;
+                        background-color: var(--color-tan);
+                    }
+                }
+                &.active {
+                    color: var(--color-tan);
+                    &::after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        margin-top: 3px;
+                        height: 2px;
+                        width: 100%;
+                        background-color: var(--color-tan);
+                        @include transition(0.4);
+                    }
+                }
+            }
+        }
+    }
+    &__right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 26px;
+        height: 100%;
+        &-lang {
+            position: relative;
+            height: 100%;
+            cursor: pointer;
+            @include text("pnb", var(--fs-btn), var(--lh-btn), var(--color-white), var(--text-trans));
+            .curr {
+                height: var(--height-header);
+                cursor: pointer;
+                height: 100%;
+                @include midobj(true);
+                &__text {
+                    margin-right: 2px;
+                }
+                position: relative;
+            }
+            .select {
+                text-align: center;
+                background: var(--color-black);
+                position: absolute;
+                right: 0;
+                top: var(--height-header);
+                z-index: 200px;
+                opacity: 0;
+                visibility: hidden;
+                padding: 13px 20px;
+                @include transition(0.4s);
+                li {
+                    &:not(:last-child) {
+                        margin-bottom: 14px;
+                    }
+                }
+            }
+            &.active {
+                .curr {
+                    img {
+                        transform: rotate(180deg);
+                    }
+                }
+                .select {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+        &-btnmenu {
+            display: none;
+        }
+    }
+    @include md {
+        height: 64px;
+        &__menu {
+            display: none;
+        }
+        &__right {
+            &-btnmenu {
+                display: block;
+                .icon {
+                    z-index: 600;
+                    width: 24px;
+                    height: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    span {
+                        display: block;
+                        width: 100%;
+                        height: 2px;
+                        background: rgb(255, 255, 255);
+                    }
+                }
+                &.--active {
+                    display: flex;
+                    span {
+                        &:nth-child(1) {
+                            transform: rotate(45deg) translate(9px, 4px);
+                            // transform-origin: 0% 0%;
+                            transition: transform 0.4s ease-in-out;
+                        }
+                        &:nth-child(2) {
+                            transition: transform 0.2s ease-in-out;
+                            transform: scaleY(0);
+                        }
+                        &:nth-child(3) {
+                            transform: rotate(-45deg) translate(9px, -4px);
+                            // transform-origin: 0% 100%;
+                            transition: transform 0.4s ease-in-out;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.--none {
+        .header__logo {
+            img {
+                display: none;
+            }
+        }
+        .header__right {
+            &-lang {
+                display: none;
+            }
+        }
+    }
+}

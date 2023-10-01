@@ -1,0 +1,142 @@
+24/7
+
+nếu 12 cột thì dùng repeat(n , 1fr)
+auto di voi 1fr thi auto se fit theo content
+gird-column: 2/4 ( 2: start - 4: end)
+gird-area: row start - column start - row end - column end 
+
+26/7 
+
+@mixin & include
+@entend: ke thua 
+@for $giatri from ... through ...
+	.class-#...
+
+
+*import - cau truc file
+dest: những file cuối ( font.css)
+scss:
+	- core: file cốt lõi
+		+ những file như biến, reset, mixin
+		+ có dấu gạch ví dụ (_reset.css)
+	- pages: những trang cho web có nhiều trang
+file scss: triệu tập những file đã cắt bằng cách sử dụng import  
+
+
+---file reset: 
+- img:
+	+ max-width 100%
+	+ display: block
+	prevent dragging ghost image 
+- strong:
+	+ ff: gắn font boild
+- a: 
+	+ text-decoration: none
+	+ outline: 0
+- sub:
+	+ ver - align: sub
+	+
+- sup:
+	+ ver - align: super
+
+
+--file variables:
+:root:
+	+ max-width-page
+	+ max-width-containerfluid
+	+ gap
+	+ container: 1196 + gap x 2
+
+	+ color
+	+ font size + line height
+	+ height header, button
+	+ pd section
+
+	+ duration 
+
+
+
+import (không cần dấu ../ hoặc _ )
+1. reset
+2. mixin
+3. variable
+--> load màn hình trước xong rồi mới load giá trị tuỳ thuộc vào loại màn hình do đó mixin phải nằm trên 
+
+4. layouts
+5. libs
+6. componets
+
+7. header
+8. nav
+9. footer
+
+10. home
+
+
+
+-- Web responsive 28/7
+Adaptive: 3 bản riêng ( mỗi bản là cố định )
+Responsive: 1 source dùng cho nhiều loại thiết bị 
+Mobile first: 
+
+viewport - khung hình người dùng thấy trên thiết bị
+gutter là gap 
+
+breakpoint là những điểm mà tại đó giao diện thay đổi 
+	+ 1440 
+	+ 1200
+	+ 992
+	+ 768
+max-width đi từ ngoài zô 
+
+tại sao có laptop lớn 1440px -> bởi vì nếu code trên 1920 thì phải điều chỉnh nhỏ lại 
+media query - đáp ứng cho nhiều device với nhiều kích thước màn hình khác nhau 
+
+thẻ img và picture
+-img:
+	+ srcset - max width 720 ( màn hình 720 trở xuống )
+- picture: 
+	+ độ phân giải màn hìng DPI (co lại, nhìn nét 1.5x)
+
+
+section tren footer chi can img img display flex, gap, 
+
+62,5 -> 58%
+
+
+duoi 376 - xxxs
+
+3 gach cho z-index cao len ( cao hon nav )
+
+
+--- 2/8
+380 / 261
+img thu 3.  height 100% 
+con lai width 100% 
+
+
+3 GACH:
+1 div bọc 3 span -> div đó css một khung có h,w 
+css cho thẻ span thành dấu gạch (h, w)
+lấy div display:flex, direction: col, ...
+lấy span1,3 cố định, transform orgin , xoay 45deg 
+neu vo man hinh chi con 1 cot, thi xu ly text goi mixin truyen vo inital
+do lai khoang cach, padding, gap, button
+quality < 
+
+-- 834 da check
+-- da check 768 9 pro
+
+
+moi item gan attribute
+get id video
+selector video, bam zo lay 
+
+
+
+dest: 
+
+/////
+color header
+back to top 
+chon ngon ngu 
